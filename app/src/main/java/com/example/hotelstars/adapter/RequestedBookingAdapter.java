@@ -57,11 +57,11 @@ public class RequestedBookingAdapter extends RecyclerView.Adapter<RequestedBooki
 
         //set view
         holder.edTitle.setText(roomTitle);
-        holder.edStatus.setText("Status: "+status);
-        holder.edStartDate.setText(new StringBuilder().append("Start Date: ").append(startDate).toString());
-        holder.edNights.setText(new StringBuilder().append("Nights: ").append(String.valueOf(bookingDays)).toString());
-        holder.edPrice.setText(new StringBuilder().append("Price: ").append(String.valueOf(price)).append(" RM").toString());
-        holder.edTotal.setText(new StringBuilder().append("Total: ").append(String.valueOf(totalPayment)).append(" RM").toString());
+        holder.edStatus.setText("Trạng thái: "+status);
+        holder.edStartDate.setText(new StringBuilder().append("Check-in: ").append(startDate).toString());
+        holder.edNights.setText(new StringBuilder().append("Số đêm: ").append(String.valueOf(bookingDays)).toString());
+        holder.edPrice.setText(new StringBuilder().append("Giá(1 đêm): ").append(String.valueOf(price)).append(" VND").toString());
+        holder.edTotal.setText(new StringBuilder().append("Tổng tiền: ").append(String.valueOf(totalPayment)).append(" VND").toString());
         //set the image
         Picasso.with(this.context).load(imageUrl).fit().into(holder.imageView);
         //cancel booking
@@ -74,7 +74,7 @@ public class RequestedBookingAdapter extends RecyclerView.Adapter<RequestedBooki
                     @Override
                     public void onSuccess(Void aVoid) {
 
-                        Toast.makeText(view.getContext(), "Booking Canceled", Toast.LENGTH_LONG).show();
+                        Toast.makeText(view.getContext(), "Đã hủy đặt phòng!", Toast.LENGTH_LONG).show();
                         //delete from the ui
                         arrayList.remove(holder.getAdapterPosition());
                         notifyItemRemoved(holder.getAdapterPosition());

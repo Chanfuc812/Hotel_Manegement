@@ -40,7 +40,7 @@ public class CurrentBooking extends AppCompatActivity implements BookingViewFetc
 
         menu = findViewById(R.id.onMenu);
         profile= findViewById(R.id.onProfile);
-        title.setText("Current Booking List");
+        title.setText("PHÒNG ĐANG ĐẶT");
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +90,7 @@ public class CurrentBooking extends AppCompatActivity implements BookingViewFetc
     @Override
     public void onUpdateSuccess(BookingModel message) {
         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        if(message != null &&message.getStatus().equals("accepted")&& message.getCustomerEmail().equals(email)){
+        if(message != null &&message.getStatus().equals("Đã chấp thuận")&& message.getCustomerEmail().equals(email)){
             BookingModel roomModel = new BookingModel(message.getId(),message.getCustomerEmail(),
                     message.getRoomID(), message.getRoomTitle(), message.getStartDate(),
                     message.getEndDate(),message.getStatus(),message.getImageUrl(),

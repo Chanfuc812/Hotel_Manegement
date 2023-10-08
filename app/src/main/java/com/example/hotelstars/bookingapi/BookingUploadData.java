@@ -33,13 +33,13 @@ public class BookingUploadData implements BookingDataPresenter, BookingViewMessa
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            bookingViewMessage.onUpdateSuccess("Booked Successfully, check your booking request for update");
+                            bookingViewMessage.onUpdateSuccess("Đã đặt thành công, hãy kiểm tra yêu cầu đặt phòng của bạn để biết thông tin cập nhật!");
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                bookingViewMessage.onUpdateFailure("Something went wrong");
+                bookingViewMessage.onUpdateFailure("Đã xảy ra lỗi!");
             }
         });
     }

@@ -14,6 +14,7 @@ import com.example.hotelstars.auth.VerifyEmail;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             boolean emailVerified = user.isEmailVerified();
             Intent intent;
             if(email.equals("admin@gmail.com")){
-                Toast.makeText(MainActivity.this, "Welcome Back", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "WELCOME BACK, MANAGER ✋", Toast.LENGTH_LONG).show();
                 intent = new Intent(MainActivity.this, AdminPanel.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -79,4 +80,5 @@ public class MainActivity extends AppCompatActivity {
         homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(homeIntent);
     }
+
 }

@@ -87,7 +87,7 @@
                         android:lines="1"
                         android:padding="10dp"
                         android:background="@color/blue"
-                        android:text="@string/description"
+                        android:text="Mô tả:"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -199,7 +199,7 @@
                         android:backgroundTint="@color/blue"
                         android:padding="10dp"
                         android:layout_margin="15dp"
-                        android:text="@string/update"
+                        android:text="Lưu"
                         android:textSize="14sp"
                         android:textColor="@color/white"
                         android:textStyle="bold" />

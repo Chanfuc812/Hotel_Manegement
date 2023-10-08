@@ -102,7 +102,7 @@
                         android:lines="1"
                         android:padding="10dp"
                         android:background="@color/blue"
-                        android:text="Nights:"
+                        android:text="Số đêm:"
                         android:textAlignment="textStart"
                         android:textColor="@color/white"
                         android:textSize="14sp"

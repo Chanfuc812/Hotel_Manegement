@@ -46,7 +46,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/lets_book_your_room"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
         <ImageView
@@ -255,6 +255,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/grey_circular_border"
+                        android:drawableEnd="@drawable/menu"
+                        android:drawableTint="@color/blue"
                         android:onClick="onViewAllItems"
                         android:padding="5dp"
                         android:text="@string/view_all"

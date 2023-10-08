@@ -47,7 +47,7 @@ public class CustomerList extends AppCompatActivity implements UserViewFetchMess
         title = findViewById(R.id.pageTitle);
 
         menu = findViewById(R.id.onMenu);
-        title.setText("Customer List");
+        title.setText("DANH SÁCH KHÁCH HÀNG");
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override

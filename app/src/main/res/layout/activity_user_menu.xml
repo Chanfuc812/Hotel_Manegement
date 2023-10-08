@@ -153,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/current_booking"
+                    android:text="THÔNG TIN ĐẶT PHÒNG"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"

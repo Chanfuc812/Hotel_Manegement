@@ -38,7 +38,7 @@ public class ViewAllRoom extends AppCompatActivity implements RoomViewFetchMessa
 
         menu = findViewById(R.id.onMenu);
         profile= findViewById(R.id.onProfile);
-        title.setText("All the available room");
+        title.setText("PHÒNG ĐANG CÓ SẴN");
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override

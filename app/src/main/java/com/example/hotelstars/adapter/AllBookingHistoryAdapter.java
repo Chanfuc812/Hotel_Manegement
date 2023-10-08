@@ -62,11 +62,11 @@ public class AllBookingHistoryAdapter extends RecyclerView.Adapter<AllBookingHis
         holder.edendDate.setText(endDate);
         holder.edMail.setText(CustomerEmail);
         holder.edTitle.setText(roomTitle);
-        holder.edStatus.setText("Status: "+status);
-        holder.edStartDate.setText(new StringBuilder().append("Start Date: ").append(startDate).toString());
-        holder.edNights.setText(new StringBuilder().append("Nights: ").append(String.valueOf(bookingDays)).toString());
-        holder.edPrice.setText(new StringBuilder().append("Price: ").append(String.valueOf(price)).append(" RM").toString());
-        holder.edTotal.setText(new StringBuilder().append("Total: ").append(String.valueOf(totalPayment)).append(" RM").toString());
+        holder.edStatus.setText("Trạng thái: "+status);
+        holder.edStartDate.setText(new StringBuilder().append("Check-in: ").append(startDate).toString());
+        holder.edNights.setText(new StringBuilder().append("Số đêm: ").append(String.valueOf(bookingDays)).toString());
+        holder.edPrice.setText(new StringBuilder().append("Giá(1 đêm): ").append(String.valueOf(price)).append(" VND").toString());
+        holder.edTotal.setText(new StringBuilder().append("Tổng tiền: ").append(String.valueOf(totalPayment)).append(" VND").toString());
         //set the image
         Picasso.with(this.context).load(imageUrl).fit().into(holder.imageView);
 

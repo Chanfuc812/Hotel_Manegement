@@ -84,13 +84,13 @@ public class RoomPageActivity extends AppCompatActivity implements RoomViewFetch
             @Override
             public void onClick(View view) {
                 showDialog(999);
-                Toast.makeText(getApplicationContext(), "Enter Start Date", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Nhập ngày Check-in", Toast.LENGTH_SHORT).show();
             }
         });
         //set the current room view
         vTitle.setText(title);
         vDesc.setText(description);
-        vPrice.setText(price+" RM");
+        vPrice.setText(price+" VND");
         Picasso.with(this).load(imageUrl).fit().into(imageView);
         //get the similar room
         ListDataView = findViewById(R.id.SimilarListView);
@@ -185,10 +185,10 @@ public class RoomPageActivity extends AppCompatActivity implements RoomViewFetch
         roomTitle = title.trim();
         startDate = vStartDate.getText().toString().trim();
         endDate = "";
-        status = "requested";
+        status = "Yêu cầu";
         String Days = vNights.getText().toString().trim();
         if(TextUtils.isEmpty(Days)){
-            vNights.setError("Enter Number of nights");
+            vNights.setError("Nhập số đêm");
         }else{
             bookingDays = Integer.parseInt(Days);
             if(!TextUtils.isEmpty(startDate) && bookingDays >0 && difference >=0){
@@ -198,17 +198,17 @@ public class RoomPageActivity extends AppCompatActivity implements RoomViewFetch
             }
             else{
                 if(TextUtils.isEmpty(startDate)){
-                    vStartDate.setError("Please Enter Start Date");
+                    vStartDate.setError("Vui lòng nhập ngày Check-in");
                     return;
                 }
                 if (difference <0){
-                    vStartDate.setError("The date cannot be older than the current date!");
-                    Toast.makeText(RoomPageActivity.this, "Date cannot be older than the current date!", Toast.LENGTH_SHORT).show();
+                    vStartDate.setError("Bạn phải chọn ngày sau ngày hiện tại!");
+                    Toast.makeText(RoomPageActivity.this, "Bạn phải chọn ngày sau ngày hiện tại!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (bookingDays <=0){
-                    vNights.setError("Enter more than zero");
-                    Toast.makeText(RoomPageActivity.this, "Enter more than zero!", Toast.LENGTH_SHORT).show();
+                    vNights.setError("Bạn phải nhập ít nhất 1 đêm!");
+                    Toast.makeText(RoomPageActivity.this, "Bạn phải nhập ít nhất 1 đêm!", Toast.LENGTH_SHORT).show();
                 }
 
             }

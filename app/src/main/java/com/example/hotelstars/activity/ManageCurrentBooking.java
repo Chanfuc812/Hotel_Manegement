@@ -40,7 +40,7 @@ public class ManageCurrentBooking extends AppCompatActivity implements BookingVi
         title = findViewById(R.id.pageTitle);
 
         menu = findViewById(R.id.onMenu);
-        title.setText("Current Booking List");
+        title.setText("DANH SÁCH ĐẶT PHÒNG");
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +80,7 @@ public class ManageCurrentBooking extends AppCompatActivity implements BookingVi
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onUpdateSuccess(BookingModel message) {
-        if(message != null &&message.getStatus().equals("accepted")){
+        if(message != null &&message.getStatus().equals("Đã chấp thuận")){
             BookingModel roomModel = new BookingModel(message.getId(),message.getCustomerEmail(),
                     message.getRoomID(), message.getRoomTitle(), message.getStartDate(),
                     message.getEndDate(),message.getStatus(),message.getImageUrl(),

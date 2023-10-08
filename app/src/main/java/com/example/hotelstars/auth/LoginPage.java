@@ -52,11 +52,11 @@ public class LoginPage extends AppCompatActivity {
             SignInWithEmailAndPassword(uEmail, uPassword);
         } else {
             if (TextUtils.isEmpty(uEmail)) {
-                email.setError("Email is required");
+                email.setError("Vui lòng nhập E-mail!");
                 return;
             }
             if (TextUtils.isEmpty(uPassword)) {
-                password.setError("Password is required");
+                password.setError("Vui lòng nhập mật khẩu!");
             }
 
         }
@@ -72,7 +72,7 @@ public class LoginPage extends AppCompatActivity {
 
                         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
                         if(email.equals("admin@gmail.com")){
-                            Toast.makeText(LoginPage.this, "Welcome Back", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginPage.this, "WELCOME BACK, MANAGER ✋", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(LoginPage.this, AdminPanel.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
@@ -80,12 +80,12 @@ public class LoginPage extends AppCompatActivity {
                         }
                         else{
                             if(isVerified){
-                                Toast.makeText(LoginPage.this, "Welcome Back", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginPage.this, "XIN CHÀO QUÝ KHÁCH ✋", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(LoginPage.this, HomePageActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                             }else{
-                                Toast.makeText(LoginPage.this, "Please verify your email first", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginPage.this, "Vui lòng xác minh E-mail của bạn!", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(LoginPage.this, VerifyEmail.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);

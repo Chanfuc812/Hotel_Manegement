@@ -68,7 +68,7 @@ public class UserProfile extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(UserProfile.this, "Check your internet Connection !", Toast.LENGTH_LONG).show();
+                Toast.makeText(UserProfile.this, "Vui lòng kiểm tra kết nối mạng!", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -92,11 +92,11 @@ public class UserProfile extends AppCompatActivity {
 
         }else{
             if(TextUtils.isEmpty(Name)){
-                edName.setError("Name is required");
+                edName.setError("Vui lòng nhập tên!");
                 return;
             }
             if(TextUtils.isEmpty(Password)){
-                edPassword.setError("Password is required and must be more than 6c");
+                edPassword.setError("Mật khẩu phải có 6 ký tự!");
             }
 
         }
@@ -115,7 +115,7 @@ public class UserProfile extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener< Void >() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(UserProfile.this, "Profile updated !", Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserProfile.this, "Thông tin đã được cập nhật!", Toast.LENGTH_LONG).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                 @Override

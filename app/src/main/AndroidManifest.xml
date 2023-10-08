@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hotelstars">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -76,6 +80,14 @@
         <activity
             android:name=".auth.LoginPage"
             android:exported="false" />
+        <activity
+            android:name=".activity.Checkin"
+            android:allowBackup="true"
+            android:icon="@drawable/face_icon2"
+            android:label="@string/app_name"
+            android:largeHeap="true"
+            android:roundIcon="@drawable/face_icon2"
+            android:supportsRtl="true" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

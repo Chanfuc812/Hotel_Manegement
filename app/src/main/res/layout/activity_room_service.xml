@@ -65,12 +65,12 @@
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="45dp"
         android:alignmentMode="alignMargins"
         android:columnCount="1"
         android:columnOrderPreserved="false"
         android:padding="10dp"
-        android:rowCount="3"
+        android:rowCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -78,7 +78,55 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="140dp"
+            android:layout_height="175dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#E3E2E7"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:onClick="checkin_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/face"
+                        android:layout_marginBottom="15dp"
+                        android:backgroundTint="@color/blue"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="70"
+                        android:padding="10dp"
+                        android:background="@color/blue"
+                        android:text="👈 Vui lòng nhấn vào đây để sử dụng “Facial Recognition” khi bạn Check-in và Check-out. Ngoài ra, bạn còn có thể sử dụng nó để ra vào khi sử dụng các dịch vụ khác như: khu vui chơi giải trí, hồ bơi, gym,..."
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="175dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -100,12 +148,13 @@
 
 
                     <ImageView
+                        android:onClick="onWifiSettingsClick"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="30"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/wifi"
-                        android:layout_marginBottom="40dp"
+                        android:layout_marginBottom="15dp"
                         android:backgroundTint="@color/blue"/>
                     <TextView
                         android:layout_width="0dp"
@@ -113,7 +162,7 @@
                         android:layout_weight="70"
                         android:padding="10dp"
                         android:background="@color/blue"
-                        android:text="Please use the following details to access the WiFi network \nUsername: Room No\nPassword: HotelStar@5"
+                        android:text="👈 Vui lòng nhấn vào đây để truy cập Wifi của khách sạn. \n\nTên Wifi: [Số phòng của bạn] \nUsername: [E-mail của bạn]\nPassword: [thanks4believe]"
                         android:textAlignment="textStart"
                         android:textColor="@color/white"
                         android:textSize="16sp"
@@ -125,7 +174,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="140dp"
+            android:layout_height="175dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
@@ -145,12 +194,13 @@
                     android:layout_gravity="center_vertical"
                     android:layout_height="match_parent">
                     <ImageView
+                        android:onClick="onCallClick"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="30"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/call"
-                        android:layout_marginBottom="40dp"
+                        android:layout_marginBottom="15dp"
                         android:backgroundTint="@color/blue"/>
                     <TextView
                         android:layout_width="0dp"
@@ -158,7 +208,7 @@
                         android:layout_weight="70"
                         android:padding="10dp"
                         android:background="@color/blue"
-                        android:text="Please use the following details to call the customer service at any time you wish\nPhone No: 0123456456 or 0323123"
+                        android:text="👈 Vui lòng nhấn vào đây để gọi cho chúng tôi bất cứ khi nào bạn cần. Chúng tôi luôn sẵn lòng phục vụ đến bạn tận tình - tận phòng 24/24. \nHoặc có thể gọi vào Hotline: \n(079) 19 11 22 - 0926.547.935"
                         android:textAlignment="textStart"
                         android:textColor="@color/white"
                         android:textSize="16sp"
@@ -167,53 +217,6 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#E3E2E7"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="6dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="100"
-                    android:layout_gravity="center_vertical"
-                    android:layout_height="match_parent">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        android:layout_gravity="center_horizontal"
-                        android:background="@drawable/food"
-                        android:layout_marginBottom="40dp"
-                        android:backgroundTint="@color/blue"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70"
-                        android:padding="10dp"
-                        android:background="@color/blue"
-                        android:text="Please note that the food timing as follow:\nBreakfast: 8 am\nLunch: 12:30pm\nDinner: 7pm"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-
 
     </GridLayout>
 

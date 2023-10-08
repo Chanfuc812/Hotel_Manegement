@@ -50,7 +50,7 @@ public class BestOfferAdapter  extends RecyclerView.Adapter<BestOfferAdapter.Vie
         price = arrayList.get(holder.getAdapterPosition()).getPrice();
 
         holder.edTitle.setText(title);
-        holder.edPrice.setText(String.valueOf(price)+" RM");
+        holder.edPrice.setText(String.valueOf(price)+" VND");
         //set the image
         Picasso.with(this.context).load(imageUrl).fit().into(holder.imageView);
         String id= arrayList.get(holder.getAdapterPosition()).getId();

@@ -135,7 +135,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/room"
+                    android:background="@drawable/update"
                     android:backgroundTint="@color/blue"/>
 
                 <TextView
@@ -295,7 +295,7 @@
             <LinearLayout
                 android:onClick="view_customersButton"
                 android:layout_width="130dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:gravity="center"

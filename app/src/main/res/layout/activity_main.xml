@@ -26,7 +26,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/just_get_your_luggage_ready_your_fantastic_room_is_ready"
+        android:text="@string/xinchaokhachhang"
         android:textAlignment="center"
         android:textStyle="normal"
         android:textColor="@color/black"

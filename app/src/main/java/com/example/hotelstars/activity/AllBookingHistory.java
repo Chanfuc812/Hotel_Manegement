@@ -39,7 +39,7 @@ public class AllBookingHistory extends AppCompatActivity implements BookingViewF
         title = findViewById(R.id.pageTitle);
 
         menu = findViewById(R.id.onMenu);
-        title.setText("Booking History List");
+        title.setText("LỊCH SỬ ĐẶT PHÒNG");
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +79,7 @@ public class AllBookingHistory extends AppCompatActivity implements BookingViewF
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onUpdateSuccess(BookingModel message) {
-        if(message != null &&message.getStatus().equals("checkedOut")){
+        if(message != null &&message.getStatus().equals("Đã trả phòng")){
             BookingModel roomModel = new BookingModel(message.getId(),message.getCustomerEmail(),
                     message.getRoomID(), message.getRoomTitle(), message.getStartDate(),
                     message.getEndDate(),message.getStatus(),message.getImageUrl(),
