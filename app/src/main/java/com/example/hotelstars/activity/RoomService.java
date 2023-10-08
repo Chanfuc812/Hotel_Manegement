@@ -51,11 +51,10 @@ public class RoomService extends AppCompatActivity {
         startActivity(callIntent);
     }
 
-    public void onSendMessageClick(View view) {
-        String phoneNumber = "0926547935";
-        Intent messageIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + phoneNumber));
-        startActivity(messageIntent);
-    }
+    //public void onSendMessageClick(View view) {
+        //String phoneNumber = "0926547935";
+        //Intent messageIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + phoneNumber));
+        //startActivity(messageIntent);}
 
     @Override
     public void onBackPressed() {
