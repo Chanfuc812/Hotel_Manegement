@@ -57,15 +57,15 @@ public class RegisterPage extends AppCompatActivity implements UserViewMessage {
 
         } else {
             if (TextUtils.isEmpty(Name)) {
-                edName.setError("Name is required");
+                edName.setError("Vui lòng nhập tên của ban!");
                 return;
             }
             if (TextUtils.isEmpty(Email)) {
-                edEmail.setError("Email is required");
+                edEmail.setError("Vui lòng nhập E-mail của ban!");
                 return;
             }
             if (TextUtils.isEmpty(Password)) {
-                edPassword.setError("password is required");
+                edPassword.setError("Vui lòng nhập mật khẩu của ban!");
             }
 
 
@@ -90,7 +90,7 @@ public class RegisterPage extends AppCompatActivity implements UserViewMessage {
                                         uploadUserRecord.onSuccessUpdate(RegisterPage.this, symmtCrypto.encrypt(name), email, symmtCrypto.encrypt(password));
                                         //send verification email
                                         //call verify ui
-                                        Toast.makeText(RegisterPage.this, "Verification email has been sent !", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterPage.this, "Vui lòng kiểm tra E-mail, chúng tôi đã gửi thư xác minh tài khoản!", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(RegisterPage.this, VerifyEmail.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);

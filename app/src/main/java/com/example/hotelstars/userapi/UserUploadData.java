@@ -29,13 +29,13 @@ public class UserUploadData implements UserDataPresenter, UserViewMessage {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                        if(task.isSuccessful()){
-                           userViewMessage.onUpdateSuccess("Registered Successfully");
+                           userViewMessage.onUpdateSuccess("Đăng ký thành công!");
                        }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                userViewMessage.onUpdateFailure("Something went wrong");
+                userViewMessage.onUpdateFailure("Đã xảy ra lỗi!");
             }
         });
     }

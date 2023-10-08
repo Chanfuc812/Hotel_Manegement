@@ -86,6 +86,8 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Checkin extends AppCompatActivity {
     FaceDetector detector;
@@ -146,6 +148,7 @@ public class Checkin extends AppCompatActivity {
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
         }
+
         //On-screen Action Button
         actions.setOnClickListener(new View.OnClickListener() {
             @Override

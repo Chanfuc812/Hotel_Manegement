@@ -29,13 +29,13 @@ public class RoomUploadData implements RoomDataPresenter, RoomViewMessage {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            roomViewMessage.onUpdateSuccess("Added Successfully");
+                            roomViewMessage.onUpdateSuccess("Thêm phòng thành công!");
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                roomViewMessage.onUpdateFailure("Something went wrong");
+                roomViewMessage.onUpdateFailure("Đã xảy ra lỗi!");
             }
         });
     }
