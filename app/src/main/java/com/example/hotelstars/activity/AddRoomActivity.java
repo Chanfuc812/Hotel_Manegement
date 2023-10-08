@@ -211,6 +211,12 @@ public class AddRoomActivity extends AppCompatActivity implements RoomViewMessag
 
     }
 
+    public void onMenuClick(View view) {
+        Intent intent = new Intent(AddRoomActivity.this, AdminPanel.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

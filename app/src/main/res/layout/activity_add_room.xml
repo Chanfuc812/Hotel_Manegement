@@ -9,6 +9,46 @@
     tools:context=".activity.AddRoomActivity"
     android:background="@color/white">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/grey_circular_border"
+            android:onClick="onMenuClick"
+            android:padding="12dp"
+            android:src="@drawable/menu"
+            app:tint="@color/black"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/blue"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/let_s_find_your_room"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
     <TextView
         android:id="@+id/txtEventTitle"
         android:layout_width="wrap_content"
@@ -117,7 +157,8 @@
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:background="@drawable/add">
+            android:background="@drawable/add"
+            android:backgroundTint="@color/black">
 
         </ImageView>
 
@@ -136,7 +177,7 @@
             android:onClick="onAddClick"
             android:text="@string/add"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
 

@@ -18,11 +18,12 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:background="@drawable/grey_circular_border"
             android:onClick="onLogoutClick"
             android:padding="12dp"
-            android:src="@drawable/logout" />
+            android:src="@drawable/logout"
+            app:tint="@color/black"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
