@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -17,7 +18,8 @@
             android:layout_alignParentLeft="true"
             android:background="@drawable/grey_circular_border"
             android:padding="12dp"
-            android:src="@drawable/menu" />
+            android:src="@drawable/menu"
+            app:tint="@color/black" />
 
 
         <LinearLayout
@@ -53,7 +55,8 @@
             android:layout_alignParentEnd="true"
             android:background="@drawable/grey_circular_border"
             android:padding="8dp"
-            android:src="@drawable/person" />
+            android:src="@drawable/person"
+            app:tint="@color/black"/>
 
     </RelativeLayout>
 

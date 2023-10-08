@@ -22,7 +22,7 @@
             android:onClick="onMenuClick"
             android:padding="12dp"
             android:src="@drawable/menu"
-             />
+            app:tint="@color/black"/>
 
 
         <LinearLayout
@@ -56,7 +56,8 @@
             android:background="@drawable/grey_circular_border"
             android:onClick="onHomePage"
             android:padding="8dp"
-            android:src="@drawable/home" />
+            android:src="@drawable/home"
+            app:tint="@color/black"/>
 
 
 

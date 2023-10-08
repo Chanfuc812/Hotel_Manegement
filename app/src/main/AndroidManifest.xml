@@ -83,10 +83,8 @@
         <activity
             android:name=".activity.Checkin"
             android:allowBackup="true"
-            android:icon="@drawable/face_icon2"
             android:label="@string/app_name"
             android:largeHeap="true"
-            android:roundIcon="@drawable/face_icon2"
             android:supportsRtl="true" />
         <activity
             android:name=".activity.MainActivity"

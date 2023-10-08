@@ -50,7 +50,7 @@
     <string name="lets_book_your_room">HÃY CHỌN CĂN PHÒNG PHÙ HỢP</string>
     <string name="book">Đặt</string>
     <string name="cancel">Hủy</string>
-    <string name="start_date">Ngày Check-in:</string>
+    <string name="start_date">Check-in:</string>
     <string name="end_date">Ngày kết thúc</string>
     <string name="enter_nights">Nhập số đêm</string>
     <string name="status">Trạng thái:</string>

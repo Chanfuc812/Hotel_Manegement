@@ -21,7 +21,8 @@
             android:background="@drawable/grey_circular_border"
             android:onClick="onMenuClick"
             android:padding="12dp"
-            android:src="@drawable/menu" />
+            android:src="@drawable/menu"
+            app:tint="@color/black"/>
 
 
         <LinearLayout
@@ -55,7 +56,8 @@
             android:layout_alignParentEnd="true"
             android:background="@drawable/grey_circular_border"
             android:padding="8dp"
-            android:src="@drawable/person" />
+            android:src="@drawable/person"
+            app:tint="@color/black"/>
 
 
 
@@ -70,9 +72,9 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="230dp"
             android:layout_marginBottom="30dp"
-            android:src="@mipmap/ic_launcher_foreground" />
+            android:src="@drawable/hotel_resort" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,6 +110,8 @@
                     android:layout_alignParentEnd="true"
                     android:background="@drawable/grey_circular_border"
                     android:onClick="onViewAllItems"
+                    android:drawableEnd="@drawable/menu"
+                    android:drawableTint="@color/blue"
                     android:padding="10dp"
                     android:text="@string/view_all"
                     android:textColor="@color/blue"

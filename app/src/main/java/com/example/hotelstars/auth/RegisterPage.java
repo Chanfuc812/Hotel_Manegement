@@ -105,7 +105,7 @@ public class RegisterPage extends AppCompatActivity implements UserViewMessage {
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(RegisterPage.this, "Try again later !", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(RegisterPage.this, "Đã có lỗi, vui lòng thử lại!", Toast.LENGTH_LONG).show();
                                 }
                             });
                         }
