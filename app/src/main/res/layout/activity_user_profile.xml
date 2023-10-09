@@ -89,7 +89,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="70dp"
                 android:background="@drawable/person"
-                android:backgroundTint="@color/white" />
+                android:backgroundTint="@color/den" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -219,25 +219,25 @@
                     android:weightSum="100">
 
                     <Button
-                        android:layout_width="0dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginStart="60dp"
+                        android:layout_marginStart="50dp"
                         android:layout_weight="40"
-                        android:backgroundTint="@color/white"
+                        android:backgroundTint="@color/green"
                         android:gravity="center"
                         android:lines="1"
                         android:onClick="onClickUpdateButton"
                         android:text="@string/update"
-                        android:textColor="@color/blue"
-                        android:textSize="12sp"
+                        android:textColor="@color/den"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <Button
-                        android:layout_width="0dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="50dp"
                         android:layout_weight="40"
                         android:backgroundTint="@color/red"
                         android:gravity="center"
@@ -245,7 +245,7 @@
                         android:onClick="onClickLogOutButton"
                         android:text="@string/logout"
                         android:textColor="@color/white"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>

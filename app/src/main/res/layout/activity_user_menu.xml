@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:padding="16dp">
 
+
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -64,12 +65,24 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="320dp"
+            android:src="@drawable/hotel_resort1" />
+    </LinearLayout>
 
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="50dp"
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:columnOrderPreserved="false"
@@ -107,7 +120,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/send"
-                    android:backgroundTint="@color/white"/>
+                    android:backgroundTint="@color/den"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -117,7 +130,7 @@
                     android:textColor="@color/white"
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:textStyle="normal" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -149,7 +162,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/room"
-                    android:backgroundTint="@color/white"/>
+                    android:backgroundTint="@color/den"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,7 +173,7 @@
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"
                     android:textSize="14sp"
-                    android:textStyle="normal" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -192,7 +205,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/history"
-                    android:backgroundTint="@color/white"/>
+                    android:backgroundTint="@color/den"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -202,7 +215,7 @@
                     android:textColor="@color/white"
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:textStyle="normal" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -234,7 +247,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/service"
-                    android:backgroundTint="@color/white"/>
+                    android:backgroundTint="@color/den"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -244,7 +257,7 @@
                     android:textSize="14sp"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textStyle="normal" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
