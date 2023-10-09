@@ -130,7 +130,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/room_title"
                                 android:textAlignment="center"
-                                android:textColor="@color/blue"
+                                android:textColor="@color/sky"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -181,14 +181,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
-                                android:backgroundTint="@color/blue"
+                                android:backgroundTint="@color/red"
                                 android:drawableEnd="@drawable/book"
                                 android:drawableTint="@color/white"
                                 android:padding="10dp"
                                 android:onClick="onBookRoom"
                                 android:text="@string/book"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
@@ -243,27 +243,26 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:background="@drawable/grey_circular_border"
-                        android:drawableStart="@drawable/fire"
-                        android:drawableTint="@color/blue"
-                        android:padding="5dp"
-                        android:text="@string/similar"
-                        android:textColor="@color/blue"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:drawableEnd="@drawable/fire"
+                        android:drawableTint="@color/red"
+                        android:padding="10dp"
+                        android:text="@string/best_offers"
+                        android:textColor="@color/red"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/grey_circular_border"
-                        android:drawableEnd="@drawable/menu"
-                        android:drawableTint="@color/blue"
                         android:onClick="onViewAllItems"
-                        android:padding="5dp"
+                        android:drawableTint="@color/black"
+                        android:padding="12dp"
                         android:text="@string/view_all"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
                 </RelativeLayout>
 
                 <LinearLayout
