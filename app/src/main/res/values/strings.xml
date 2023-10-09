@@ -61,6 +61,7 @@
     <string name="nights">Đêm:</string>
     <string name="checkout_at">Đã thanh toán:</string>
     <string name="chuadc">CHƯA ĐƯỢC LỄ TÂN CUNG CẤP TÀI KHOẢN? \n 👉<u>VUI LÒNG ĐĂNG KÝ TẠI ĐÂY</u>👈</string>
+    <string name="dadc">BẠN ĐÃ ĐƯỢC CUNG CẤP TÀI KHOẢN!  \n 👉<u> VUI LÒNG ĐĂNG NHẬP TẠI ĐÂY</u>👈</string>
     <string name="action_settings">Cài đặt</string>
     <!-- Chuỗi sử dụng cho các fragment trong điều hướng -->
     <string name="first_fragment_label">Fragment Đầu tiên</string>

@@ -116,7 +116,12 @@ public class CurrentBooking extends AppCompatActivity implements BookingViewFetc
         startActivity(intent);
         finish();
     }
-
+    public void onProfilePage(View view) {
+        Intent intent = new Intent(CurrentBooking.this, UserProfile.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
     @Override
     public void onUpdateFailure(String message) {
         Toast.makeText(CurrentBooking.this, message, Toast.LENGTH_LONG).show();
