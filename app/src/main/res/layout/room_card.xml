@@ -65,6 +65,7 @@
                     android:padding="1dp"
                     android:layout_marginEnd="5dp"
                     android:src="@drawable/fire"
+                    app:tint="@color/red"
                     android:background="@drawable/grey_circular_border"/>
 
             </LinearLayout>
