@@ -80,7 +80,7 @@ public class ManageCurrentBooking extends AppCompatActivity implements BookingVi
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onUpdateSuccess(BookingModel message) {
-        if(message != null &&message.getStatus().equals("Đã chấp thuận")){
+        if(message != null &&message.getStatus().equals("Đã duyệt")){
             BookingModel roomModel = new BookingModel(message.getId(),message.getCustomerEmail(),
                     message.getRoomID(), message.getRoomTitle(), message.getStartDate(),
                     message.getEndDate(),message.getStatus(),message.getImageUrl(),

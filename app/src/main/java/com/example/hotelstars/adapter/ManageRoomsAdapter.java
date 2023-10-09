@@ -71,7 +71,7 @@ public class ManageRoomsAdapter extends RecyclerView.Adapter<ManageRoomsAdapter.
                     @Override
                     public void onSuccess(Void aVoid) {
 
-                        Toast.makeText(v.getContext(), "Room Deleted", Toast.LENGTH_LONG).show();
+                        Toast.makeText(v.getContext(), "Đã xóa Phòng!", Toast.LENGTH_LONG).show();
                         //delete from the ui
                         arrayList.remove(holder.getAdapterPosition());
                         notifyItemRemoved(holder.getAdapterPosition());
@@ -107,7 +107,7 @@ public class ManageRoomsAdapter extends RecyclerView.Adapter<ManageRoomsAdapter.
                         @Override
                         public void onSuccess(Void aVoid) {
 
-                            Toast.makeText(view.getContext(), "Room Updated", Toast.LENGTH_LONG).show();
+                            Toast.makeText(view.getContext(), "Đã cập nhật Phòng!", Toast.LENGTH_LONG).show();
 
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -118,18 +118,18 @@ public class ManageRoomsAdapter extends RecyclerView.Adapter<ManageRoomsAdapter.
                     });
                 }else{
                     if(TextUtils.isEmpty(title)){
-                        holder.edTitle.setError("Title is required");
+                        holder.edTitle.setError("Tiêu đề bắt buộc phải có!");
                         return;
                     }if (TextUtils.isEmpty(description)){
-                        holder.edDesc.setError("Description is required");
+                        holder.edDesc.setError("Mô tả bắt buộc phải có!");
                         return;
                     }
                     if (TextUtils.isEmpty(location)){
-                        holder.edLocation.setError("Location is required");
+                        holder.edLocation.setError("Vui lòng không để trống vị trí!");
                         return;
                     }
                     if (holder.edPrice.getText() == null){
-                        holder.edPrice.setError("Price is required");
+                        holder.edPrice.setError("Vui lòng không để trống giá tiền!");
                     }
                 }
 

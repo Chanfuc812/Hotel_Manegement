@@ -230,7 +230,7 @@
                         android:onClick="onClickUpdateButton"
                         android:text="@string/update"
                         android:textColor="@color/den"
-                        android:textSize="17sp"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
 
                     <Button
@@ -245,7 +245,7 @@
                         android:onClick="onClickLogOutButton"
                         android:text="@string/logout"
                         android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>

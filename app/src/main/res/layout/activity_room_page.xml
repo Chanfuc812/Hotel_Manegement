@@ -120,7 +120,7 @@
                                 android:text="@string/price"
                                 android:layout_margin="5dp"
                                 android:textStyle="bold"
-                                android:textColor="@color/black"
+                                android:textColor="@color/red"
                                 android:textSize="18sp" />
 
                             <TextView
@@ -130,7 +130,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/room_title"
                                 android:textAlignment="center"
-                                android:textColor="@color/sky"
+                                android:textColor="@color/blue"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -155,7 +155,7 @@
                                 android:layout_marginStart="5dp"
                                 android:textStyle="bold"
                                 android:hint="@string/start_date"
-                                android:textColor="@color/blue"
+                                android:textColor="@color/sky"
                                 android:textSize="16sp" />
                             <Space
                                 android:layout_width="wrap_content"
@@ -169,7 +169,7 @@
                                 android:textStyle="bold"
                                 android:hint="@string/enter_nights"
                                 android:inputType="number"
-                                android:textColor="@color/blue"
+                                android:textColor="@color/sky"
                                 android:textSize="16sp" />
                             <Space
                                 android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
                                 android:textAlignment="textStart"
                                 android:text="@string/not_found"
                                 android:padding="12dp"
-                                android:textColor="@color/black"
+                                android:textColor="@color/white"
                                 />
 
                         </LinearLayout>

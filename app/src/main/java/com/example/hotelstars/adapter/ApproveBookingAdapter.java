@@ -96,7 +96,7 @@ public class ApproveBookingAdapter  extends RecyclerView.Adapter<ApproveBookingA
             public void onClick(View view) {
                 FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
                 DocumentReference record = firebaseFirestore.collection("BookingData").document(id);
-                record.update("status", "Đã chấp thuận").addOnSuccessListener(new OnSuccessListener<Void>() {
+                record.update("status", "Đã duyệt").addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(view.getContext(), "Xác nhận đặt phòng!", Toast.LENGTH_LONG).show();

@@ -44,8 +44,9 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/page_title"
                 android:textAlignment="center"
-                android:textColor="@color/blue"
-                android:textSize="15sp" />
+                android:textColor="@color/den"
+                android:textStyle="bold"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <ImageView

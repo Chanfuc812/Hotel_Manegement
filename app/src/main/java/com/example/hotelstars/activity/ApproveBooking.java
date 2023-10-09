@@ -32,6 +32,7 @@ public class ApproveBooking extends AppCompatActivity implements BookingViewFetc
 
     ArrayList<BookingModel> roomModelArrayList = new ArrayList<>();
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

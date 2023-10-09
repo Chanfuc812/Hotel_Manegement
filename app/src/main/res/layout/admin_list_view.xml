@@ -15,12 +15,20 @@
             android:id="@+id/onMenu"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:background="@drawable/grey_circular_border"
             android:padding="12dp"
-            android:src="@drawable/menu"
-            app:tint="@color/black"/>
-
+            android:onClick="onMenuClick"
+            app:tint="@color/black"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/menu" />
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:padding="12dp"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/admin"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,8 +52,9 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/page_title"
                 android:textAlignment="center"
-                android:textColor="@color/blue"
-                android:textSize="15sp" />
+                android:textColor="@color/den"
+                android:textStyle="bold"
+                android:textSize="16sp" />
         </LinearLayout>
 
     </RelativeLayout>

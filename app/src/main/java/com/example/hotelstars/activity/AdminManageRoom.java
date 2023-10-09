@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +72,12 @@ public class AdminManageRoom extends Activity implements RoomViewFetchMessage {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent intent = new Intent(AdminManageRoom.this, AdminPanel.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+    public void onMenuClick(View view) {
         Intent intent = new Intent(AdminManageRoom.this, AdminPanel.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);

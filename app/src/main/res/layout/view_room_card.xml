@@ -16,53 +16,6 @@
         android:padding="10dp"
         android:id="@+id/CardView"
         >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:background="@drawable/grey_circular_border"
-                android:onClick="onMenuClick"
-                android:padding="12dp"
-                android:src="@drawable/menu"
-                android:layout_marginTop="10dp"
-                app:tint="@color/black"/>
-            <ImageView
-                android:layout_width="85dp"
-                android:layout_height="100dp"
-                android:layout_alignParentEnd="true"
-                android:padding="12dp"
-                android:layout_marginTop="-10dp"
-                android:src="@drawable/admin"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="@color/blue"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/let_s_find_your_room"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-            </LinearLayout>
-        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,7 +49,7 @@
                         android:padding="10dp"
                         android:background="@color/blue"
                         android:text="@string/title"
-                        android:textColor="@color/white"
+                        android:textColor="@color/den"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -108,7 +61,7 @@
                         android:padding="10dp"
                         android:inputType="text"
                         android:text="@string/not_found"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="normal" />
 
@@ -135,7 +88,7 @@
                         android:padding="10dp"
                         android:background="@color/blue"
                         android:text="Mô tả:"
-                        android:textColor="@color/white"
+                        android:textColor="@color/den"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -147,7 +100,7 @@
                         android:padding="10dp"
                         android:inputType="text"
                         android:text="@string/not_found"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="normal" />
 
@@ -174,7 +127,7 @@
                         android:lines="1"
                         android:padding="10dp"
                         android:text="@string/location"
-                        android:textColor="@color/white"
+                        android:textColor="@color/den"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -186,7 +139,7 @@
                         android:padding="10dp"
                         android:inputType="text"
                         android:text="@string/not_found"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="normal" />
 
@@ -212,7 +165,7 @@
                         android:padding="10dp"
                         android:text="@string/price"
                         android:background="@color/blue"
-                        android:textColor="@color/white"
+                        android:textColor="@color/den"
                         android:textSize="14sp"
                         android:textStyle="bold" />
                     <EditText
@@ -225,7 +178,7 @@
                         android:inputType="number"
                         android:text="Not found!"
                         android:padding="10dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         />
 
                 </LinearLayout>

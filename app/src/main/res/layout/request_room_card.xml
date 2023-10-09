@@ -178,9 +178,9 @@
                         android:padding="5dp"
                         android:layout_margin="15dp"
                         android:text="@string/cancel"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:textColor="@color/white"
-                        android:textStyle="normal" />
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 

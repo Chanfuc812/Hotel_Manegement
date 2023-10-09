@@ -90,7 +90,7 @@ public class CurrentBooking extends AppCompatActivity implements BookingViewFetc
     @Override
     public void onUpdateSuccess(BookingModel message) {
         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        if(message != null &&message.getStatus().equals("Đã chấp thuận")&& message.getCustomerEmail().equals(email)){
+        if(message != null &&message.getStatus().equals("Đã duyệt")&& message.getCustomerEmail().equals(email)){
             BookingModel roomModel = new BookingModel(message.getId(),message.getCustomerEmail(),
                     message.getRoomID(), message.getRoomTitle(), message.getStartDate(),
                     message.getEndDate(),message.getStatus(),message.getImageUrl(),
