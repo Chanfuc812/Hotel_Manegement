@@ -19,8 +19,8 @@
     <string name="let_s_write">Hãy viết,</string>
     <string name="xinchaokhachhang">QUÝ KHÁCH CHỈ VIỆC CHUẨN BỊ HÀNH TRANG CÒN PHÒNG VÀ DỊCH VỤ TUYỆT VỜI NHẤT ĐÃ CÓ CHÚNG TÔI LO!</string>
     <string name="let_s_find_your_room">LUXURY AND ROMANTIC </string>
-    <string name="best_offers">ƯU ĐÃI TỐT NHẤT</string>
-    <string name="view_all">TẤT CẢ</string>
+    <string name="best_offers">TOP ROOMS</string>
+    <string name="view_all">XEM TẤT CẢ</string>
     <string name="lets_check_your_profile">THÔNG TIN CỦA BẠN</string>
     <string name="logout">Đăng xuất</string>
     <string name="master_room">Phòng chính</string>
@@ -60,7 +60,7 @@
     <string name="checkout">CHECK-OUT:</string>
     <string name="nights">Đêm:</string>
     <string name="checkout_at">Đã thanh toán:</string>
-
+    <string name="chuadc">CHƯA ĐƯỢC LỄ TÂN CUNG CẤP TÀI KHOẢN? \n 👉<u>VUI LÒNG ĐĂNG KÝ TẠI ĐÂY</u>👈</string>
     <string name="action_settings">Cài đặt</string>
     <!-- Chuỗi sử dụng cho các fragment trong điều hướng -->
     <string name="first_fragment_label">Fragment Đầu tiên</string>

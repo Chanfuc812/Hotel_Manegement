@@ -110,6 +110,12 @@ public class CurrentBooking extends AppCompatActivity implements BookingViewFetc
         startActivity(intent);
         finish();
     }
+    public void onMenuClick(View view) {
+        Intent intent = new Intent(CurrentBooking.this, AdminPanel.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     public void onUpdateFailure(String message) {

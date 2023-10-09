@@ -100,6 +100,12 @@ public class AllBookingHistory extends AppCompatActivity implements BookingViewF
         finish();
     }
 
+    public void onMenuClick(View view) {
+        Intent intent = new Intent(AllBookingHistory.this, AdminPanel.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
     @Override
     public void onUpdateFailure(String message) {
         Toast.makeText(AllBookingHistory.this, message, Toast.LENGTH_LONG).show();

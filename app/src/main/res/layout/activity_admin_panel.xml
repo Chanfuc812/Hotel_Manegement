@@ -14,7 +14,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="16dp">
-
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:padding="12dp"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/admin"/>
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -22,6 +28,7 @@
             android:background="@drawable/grey_circular_border"
             android:onClick="onLogoutClick"
             android:padding="12dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/logout"
             app:tint="@color/black"/>
 

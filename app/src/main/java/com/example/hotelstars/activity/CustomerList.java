@@ -101,7 +101,12 @@ public class CustomerList extends AppCompatActivity implements UserViewFetchMess
         startActivity(intent);
         finish();
     }
-
+    public void onMenuClick(View view) {
+        Intent intent = new Intent(CustomerList.this, AdminPanel.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
     @Override
     public void onUpdateFailure(String message) {
         Toast.makeText(CustomerList.this, message, Toast.LENGTH_LONG).show();

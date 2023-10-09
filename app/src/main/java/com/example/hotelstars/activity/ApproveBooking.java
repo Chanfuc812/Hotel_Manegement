@@ -106,4 +106,10 @@ public class ApproveBooking extends AppCompatActivity implements BookingViewFetc
         Toast.makeText(ApproveBooking.this, message, Toast.LENGTH_LONG).show();
 
     }
+    public void onMenuClick(View view) {
+        Intent intent = new Intent(ApproveBooking.this, AdminPanel.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
 }
