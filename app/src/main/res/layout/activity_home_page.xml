@@ -94,14 +94,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:background="@drawable/grey_circular_border"
                     android:drawableEnd="@drawable/fire"
                     android:drawableTint="@color/red"
                     android:padding="12dp"
                     android:text="@string/best_offers"
                     android:textColor="@color/red"
                     android:textStyle="bold"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
 
                 <com.google.android.material.textview.MaterialTextView

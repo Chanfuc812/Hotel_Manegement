@@ -120,7 +120,7 @@
                                 android:text="@string/price"
                                 android:layout_margin="5dp"
                                 android:textStyle="bold"
-                                android:textColor="@color/red"
+                                android:textColor="@color/gia"
                                 android:textSize="18sp" />
 
                             <TextView
@@ -130,7 +130,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/room_title"
                                 android:textAlignment="center"
-                                android:textColor="@color/blue"
+                                android:textColor="@color/tieudephong"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -155,7 +155,7 @@
                                 android:layout_marginStart="5dp"
                                 android:textStyle="bold"
                                 android:hint="@string/start_date"
-                                android:textColor="@color/sky"
+                                android:textColor="@color/white"
                                 android:textSize="16sp" />
                             <Space
                                 android:layout_width="wrap_content"
@@ -169,7 +169,7 @@
                                 android:textStyle="bold"
                                 android:hint="@string/enter_nights"
                                 android:inputType="number"
-                                android:textColor="@color/sky"
+                                android:textColor="@color/white"
                                 android:textSize="16sp" />
                             <Space
                                 android:layout_width="wrap_content"
@@ -242,14 +242,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:background="@drawable/grey_circular_border"
                         android:drawableEnd="@drawable/fire"
                         android:drawableTint="@color/red"
                         android:padding="10dp"
-                        android:text="@string/best_offers"
+                        android:text="BEST SELLER"
                         android:textColor="@color/red"
                         android:textStyle="bold"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
