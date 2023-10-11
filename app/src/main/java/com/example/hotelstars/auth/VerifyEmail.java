@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.hotelstars.R;
 
@@ -33,6 +34,14 @@ public class VerifyEmail extends AppCompatActivity {
         finish();
     }
 
+    public void openGmailApp(View view) {
+        Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.gm");
+        if (intent != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Ứng dụng Gmail chưa được cài đặt.", Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
