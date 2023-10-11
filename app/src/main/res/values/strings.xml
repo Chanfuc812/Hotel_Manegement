@@ -36,7 +36,7 @@
     <string name="add">THÊM</string>
     <string name="upload_room_photo">Upload ảnh phòng</string>
     <string name="adding_new_room">THÊM PHÒNG MỚI</string>
-    <string name="let_s_fill_up_the_needed_details">Hãy điền vào những thông tin cần thiết</string>
+    <string name="let_s_fill_up_the_needed_details">Điền thông tin chi tiết về phòng:</string>
     <string name="room_title">Tiêu đề phòng</string>
     <string name="room_description">Mô tả phòng</string>
     <string name="room_price">Giá phòng</string>

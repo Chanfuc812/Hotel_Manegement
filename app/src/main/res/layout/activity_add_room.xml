@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/adding_new_room"
         android:textColor="@color/blue"
         android:textAlignment="textStart"
@@ -73,11 +73,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/black"
         android:text="@string/let_s_fill_up_the_needed_details"
+        android:textStyle="bold"
         android:textAlignment="textStart"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/edTitle"

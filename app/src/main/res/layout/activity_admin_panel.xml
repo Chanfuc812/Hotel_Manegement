@@ -55,6 +55,7 @@
                 android:text="@string/lets_do_some_management"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
+
         </LinearLayout>
 
 
