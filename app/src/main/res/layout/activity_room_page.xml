@@ -154,7 +154,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:textStyle="bold"
-                                android:hint="@string/start_date"
+                                android:hint="📆Check-in"
                                 android:textColor="@color/white"
                                 android:textSize="16sp" />
                             <Space

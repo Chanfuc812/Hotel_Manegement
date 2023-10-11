@@ -173,7 +173,7 @@
                         android:layout_weight="35"
                         android:padding="10dp"
                         android:background="@color/blue"
-                        android:text="📧-mail liên hệ:"
+                        android:text="E-mail liên hệ:"
                         android:textAlignment="textStart"
                         android:textColor="@color/white"
                         android:textSize="14sp"
