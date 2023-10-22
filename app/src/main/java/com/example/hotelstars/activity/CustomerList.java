@@ -101,9 +101,16 @@ public class CustomerList extends AppCompatActivity implements UserViewFetchMess
         startActivity(intent);
         finish();
     }
+
     public void onMenuClick(View view) {
         Intent intent = new Intent(CustomerList.this, AdminPanel.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    public void admincheckin_button(View view) {
+        Intent intent = new Intent(CustomerList.this, AdminCheckin.class);
         startActivity(intent);
         finish();
     }

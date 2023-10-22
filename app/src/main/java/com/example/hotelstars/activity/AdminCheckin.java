@@ -18,21 +18,36 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.YuvImage;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.graphics.Typeface;
-import androidx.annotation.NonNull;
+import android.os.ParcelFileDescriptor;
+import android.text.InputType;
+import android.util.Pair;
+import android.util.Size;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
+import androidx.camera.view.PreviewView;
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.example.hotelstars.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,8 +55,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.common.util.concurrent.ListenableFuture;
-
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.mlkit.vision.common.InputImage;
@@ -49,24 +62,6 @@ import com.google.mlkit.vision.face.Face;
 import com.google.mlkit.vision.face.FaceDetection;
 import com.google.mlkit.vision.face.FaceDetector;
 import com.google.mlkit.vision.face.FaceDetectorOptions;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.camera.view.PreviewView;
-import androidx.core.content.ContextCompat;
-import androidx.lifecycle.LifecycleOwner;
-
-import android.os.ParcelFileDescriptor;
-import android.text.InputType;
-import android.util.Pair;
-import android.util.Size;
-import android.view.View;
-
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import org.tensorflow.lite.Interpreter;
 
@@ -86,10 +81,8 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class Checkin extends AppCompatActivity {
+public class AdminCheckin extends AppCompatActivity {
     FaceDetector detector;
 
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
@@ -103,7 +96,7 @@ public class Checkin extends AppCompatActivity {
     boolean developerMode=false;
     float distance= 1.0f;
     boolean start=true,flipX=false;
-    Context context=Checkin.this;
+    Context context= AdminCheckin.this;
     int cam_face=CameraSelector.LENS_FACING_BACK; //Default Back Camera
 
     int[] intValues;
@@ -157,7 +150,7 @@ public class Checkin extends AppCompatActivity {
                 builder.setTitle("TÙY CHỌN:");
 
                 // add a checkbox list
-                String[] names= {"Danh sách nhận dạng","Cập nhật danh sách ","Lưu trữ khuôn mặt","Load khuôn mặt","Xóa hết lưu trữ","Thêm ảnh (Thử nghiệm)"};
+                String[] names= {"Danh sách nhận dạng","Cập nhật danh sách ","Lưu trữ khuôn mặt","Load khuôn mặt","Xóa hết lưu trữ","Thêm ảnh (Thử nghiệm)","Hyperparameters","Developer Mode"};
 
                 builder.setItems(names, new DialogInterface.OnClickListener() {
                     @Override
@@ -268,7 +261,7 @@ public class Checkin extends AppCompatActivity {
 
         //Load model
         try {
-            tfLite=new Interpreter(loadModelFile(Checkin.this,modelFile));
+            tfLite=new Interpreter(loadModelFile(AdminCheckin.this,modelFile));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -1101,10 +1094,9 @@ public class Checkin extends AppCompatActivity {
     }
 
     public void goBack(View view) {
-        Intent intent = new Intent(Checkin.this, MainActivity.class);
+        Intent intent = new Intent(AdminCheckin.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
     }
-
 }

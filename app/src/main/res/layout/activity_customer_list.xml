@@ -21,20 +21,36 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp" >
+            android:layout_marginTop="30dp" />
 
+        <ImageView
+            android:id="@+id/hscardImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:background="@drawable/person"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/sky"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/hscardImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:background="@drawable/person"
-                android:backgroundTint="@color/sky"/>
+                android:layout_gravity="right"
+                android:background="@drawable/face"
+                android:onClick="admincheckin_button"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/red"
+                android:contentDescription="TODO" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
@@ -42,10 +58,11 @@
                     android:layout_gravity="center_vertical"
                     android:layout_height="wrap_content">
 
-                    <TextView
+
+                <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="35"
+                        android:layout_weight="17"
                         android:padding="10dp"
                         android:background="@color/blue"
                         android:text="@string/name"
@@ -58,11 +75,22 @@
                         android:id="@+id/cndName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="65"
+                        android:layout_weight="45"
                         android:padding="10dp"
                         android:background="@color/blue"
                         android:text="@string/name"
                         android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="38"
+                        android:padding="10dp"
+                        android:background="@color/blue"
+                        android:text="Face Recognition"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -83,7 +111,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="35"
+                        android:layout_weight="17"
                         android:padding="10dp"
                         android:background="@color/blue"
                         android:text="@string/customer_email"
@@ -96,7 +124,7 @@
                         android:id="@+id/ccardEmail"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="65"
+                        android:layout_weight="83"
                         android:padding="10dp"
                         android:background="@color/blue"
                         android:text="@string/email"
@@ -104,6 +132,7 @@
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         android:textStyle="bold" />
+
                 </LinearLayout>
 
             </LinearLayout>
