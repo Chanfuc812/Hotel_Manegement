@@ -19,7 +19,7 @@
             android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:background="@drawable/grey_circular_border"
-            android:onClick="onHomePageClick"
+            android:onClick="onMenuClick"
             android:padding="12dp"
             android:src="@drawable/home"
             app:tint="@color/black"/>

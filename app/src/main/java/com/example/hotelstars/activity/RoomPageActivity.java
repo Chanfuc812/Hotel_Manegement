@@ -243,10 +243,11 @@ public class RoomPageActivity extends AppCompatActivity implements RoomViewFetch
         vStartDate.setText(null);
     }
 
-    public void onHomePageClick(View view) {
-        Intent intent = new Intent(RoomPageActivity.this, HomePageActivity.class);
+    public void onMenuClick(View view) {
+        Intent intent = new Intent(RoomPageActivity.this, UserMenu.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
     }
+
 }
