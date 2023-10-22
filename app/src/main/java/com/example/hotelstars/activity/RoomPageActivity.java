@@ -16,6 +16,8 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import com.example.hotelstars.R;
 import com.example.hotelstars.adapter.BestOfferAdapter;
@@ -90,7 +92,8 @@ public class RoomPageActivity extends AppCompatActivity implements RoomViewFetch
         //set the current room view
         vTitle.setText(title);
         vDesc.setText(description);
-        vPrice.setText(price+" VND");
+        String priceString = NumberFormat.getNumberInstance(Locale.US).format(price) + " VND";
+        vPrice.setText(priceString);
         Picasso.with(this).load(imageUrl).fit().into(imageView);
         //get the similar room
         ListDataView = findViewById(R.id.SimilarListView);
