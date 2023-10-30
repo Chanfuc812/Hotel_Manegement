@@ -748,7 +748,8 @@ public class AdminCheckin extends AppCompatActivity {
                 else
                 {
                     if(distance_local<distance) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
-                        reco_name.setText(name);
+                        reco_name.setText(name + "\nCheck-in thành công");
+
                     else
                         reco_name.setText("Không xác định được!");
 //                    System.out.println("nearest: " + name + " - distance: " + distance_local);
