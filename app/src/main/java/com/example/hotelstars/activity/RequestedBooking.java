@@ -40,7 +40,7 @@ public class RequestedBooking extends AppCompatActivity implements BookingViewFe
 
         menu = findViewById(R.id.onMenu);
         profile= findViewById(R.id.onProfile);
-        title.setText("PHÒNG ĐANG DUYỆT");
+        title.setText("PHÒNG CHỜ DUYỆT");
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
