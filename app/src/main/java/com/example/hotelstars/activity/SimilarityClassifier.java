@@ -52,7 +52,7 @@ public interface SimilarityClassifier {
     public String toString() {
       String resultString = "";
       if (id != null) {
-        resultString += "[" + id + "] ";
+        resultString += id + " - Bạn đã Checkin thành công! ";
       }
 
       if (title != null) {

@@ -331,7 +331,7 @@ public class AdminCheckin extends AppCompatActivity {
 
             start=false;
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("Vui lòng nhập tên");
+            builder.setTitle("Vui lòng nhập tên:");
 
             // Set up the input
             final EditText input = new EditText(context);
@@ -390,7 +390,7 @@ public class AdminCheckin extends AppCompatActivity {
             builder.setPositiveButton("OK",null);
         }
         else{
-            builder.setTitle("Vui lòng chọn nhận dạng bạn muốn xóa:");
+            builder.setTitle("Vui lòng chọn “nhận dạng khuôn mặt” bạn muốn xóa:");
 
             // add a checkbox list
             String[] names= new String[registered.size()];
@@ -490,7 +490,7 @@ public class AdminCheckin extends AppCompatActivity {
         if(registered.isEmpty())
             builder.setTitle("Không có khuôn mặt nào được thêm vào!");
         else
-            builder.setTitle("Recognitions:");
+            builder.setTitle("Danh sách nhận dạng khuôn mặt:");
 
         // add a checkbox list
         String[] names= new String[registered.size()];

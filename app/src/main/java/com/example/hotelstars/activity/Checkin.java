@@ -157,7 +157,7 @@ public class Checkin extends AppCompatActivity {
                 builder.setTitle("TÙY CHỌN:");
 
                 // add a checkbox list
-                String[] names= {"Danh sách nhận dạng","Cập nhật danh sách ","Lưu trữ khuôn mặt","Load khuôn mặt","Xóa hết lưu trữ","Thêm ảnh (Thử nghiệm)"};
+                String[] names= {"Danh sách nhận dạng", "Lưu trữ khuôn mặt", "Load khuôn mặt", "Thêm ảnh (Thử nghiệm)"};
 
                 builder.setItems(names, new DialogInterface.OnClickListener() {
                     @Override
@@ -169,25 +169,13 @@ public class Checkin extends AppCompatActivity {
                                 displaynameListview();
                                 break;
                             case 1:
-                                updatenameListview();
-                                break;
-                            case 2:
                                 insertToSP(registered,0); //mode: 0:save all, 1:clear all, 2:update all
                                 break;
-                            case 3:
+                            case 2:
                                 registered.putAll(readFromSP());
                                 break;
-                            case 4:
-                                clearnameList();
-                                break;
-                            case 5:
+                            case 3:
                                 loadphoto();
-                                break;
-                            case 6:
-                                testHyperparameter();
-                                break;
-                            case 7:
-                                developerMode();
                                 break;
                         }
 
@@ -338,7 +326,7 @@ public class Checkin extends AppCompatActivity {
 
             start=false;
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("Vui lòng nhập tên");
+            builder.setTitle("Vui lòng nhập tên:");
 
             // Set up the input
             final EditText input = new EditText(context);
@@ -397,7 +385,7 @@ public class Checkin extends AppCompatActivity {
             builder.setPositiveButton("OK",null);
         }
         else{
-            builder.setTitle("Vui lòng chọn nhận dạng bạn muốn xóa:");
+            builder.setTitle("Vui lòng chọn “nhận dạng khuôn mặt” bạn muốn xóa:");
 
             // add a checkbox list
             String[] names= new String[registered.size()];
@@ -497,7 +485,7 @@ public class Checkin extends AppCompatActivity {
         if(registered.isEmpty())
             builder.setTitle("Không có khuôn mặt nào được thêm vào!");
         else
-            builder.setTitle("Recognitions:");
+            builder.setTitle("Danh sách nhận dạng khuôn mặt:");
 
         // add a checkbox list
         String[] names= new String[registered.size()];
