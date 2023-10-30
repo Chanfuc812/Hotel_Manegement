@@ -86,8 +86,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class Checkin extends AppCompatActivity {
     FaceDetector detector;
@@ -157,7 +156,7 @@ public class Checkin extends AppCompatActivity {
                 builder.setTitle("TÙY CHỌN:");
 
                 // add a checkbox list
-                String[] names= {"Danh sách nhận dạng", "Lưu trữ khuôn mặt", "Load khuôn mặt", "Thêm ảnh (Thử nghiệm)"};
+                String[] names= {"Danh sách nhận dạng khuôn mặt", "Lưu trữ nhận dạng hiện tại", "Load nhận dạng đã lưu", "Nhận dạng khuôn mặt bằng ảnh"};
 
                 builder.setItems(names, new DialogInterface.OnClickListener() {
                     @Override
@@ -232,7 +231,7 @@ public class Checkin extends AppCompatActivity {
                     textAbove_preview.setText("Vui lòng giữ khuôn mặt cố định trong vài giây!");
                     textAbove_preview.setTextColor(Color.RED);
                     textAbove_preview.setTypeface(null, Typeface.BOLD);
-                    recognize.setText("Thêm");
+                    recognize.setText("Thêm khuôn mặt");
                     add_face.setVisibility(View.INVISIBLE);
                     reco_name.setVisibility(View.VISIBLE);
                     face_preview.setVisibility(View.INVISIBLE);
@@ -364,7 +363,7 @@ public class Checkin extends AppCompatActivity {
     private  void clearnameList()
     {
         AlertDialog.Builder builder =new AlertDialog.Builder(context);
-        builder.setTitle("Bạn có muốn xóa tất cả các nhận dạng?");
+        builder.setTitle("Chắc chắn xóa tất cả các nhận dạng?");
         builder.setPositiveButton("Xoá tất cả", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -734,19 +733,19 @@ public class Checkin extends AppCompatActivity {
                 if (developerMode)
                 {
                     if(distance_local<distance) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
-                        reco_name.setText("Nearest: "+name +"\nDist: "+ String.format("%.3f",distance_local)+"\n2nd Nearest: "+nearest.get(1).first +"\nDist: "+ String.format("%.3f",nearest.get(1).second));
+                        reco_name.setText("Gần nhất: "+name +"\nKhoảng cách: "+ String.format("%.3f",distance_local)+"\nGần thứ hai: "+nearest.get(1).first +"\nKhoảng cách: "+ String.format("%.3f",nearest.get(1).second));
                     else
-                        reco_name.setText("Unknown "+"\nDist: "+String.format("%.3f",distance_local)+"\nNearest: "+name +"\nDist: "+ String.format("%.3f",distance_local)+"\n2nd Nearest: "+nearest.get(1).first +"\nDist: "+ String.format("%.3f",nearest.get(1).second));
+                        reco_name.setText("Không nhận ra! "+"\nKhoảng cách: "+String.format("%.3f",distance_local)+"\nGần nhất: "+name +"\nKhoảng cách: "+ String.format("%.3f",distance_local)+"\n Gần thứ hai: "+nearest.get(1).first +"\nKhoảng cách: "+ String.format("%.3f",nearest.get(1).second));
 
 //                    System.out.println("nearest: " + name + " - distance: " + distance_local);
                 }
                 else
                 {
                     if(distance_local<distance) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
-                        reco_name.setText(name + "\nCheck-in thành công");
+                        reco_name.setText("Bạn là: " + name + "\nCHECK-IN \n THÀNH CÔNG \n✔️");
 
                     else
-                        reco_name.setText("Không xác định được!");
+                        reco_name.setText("Không xác định được khuôn mặt! \nCHECK-IN \n THẤT BẠI \n❌");
 //                    System.out.println("nearest: " + name + " - distance: " + distance_local);
                 }
 

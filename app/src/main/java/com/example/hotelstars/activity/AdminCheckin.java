@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
+import android.text.Html;
 import android.text.InputType;
 import android.util.Pair;
 import android.util.Size;
@@ -150,7 +151,7 @@ public class AdminCheckin extends AppCompatActivity {
                 builder.setTitle("TÙY CHỌN:");
 
                 // add a checkbox list
-                String[] names= {"Danh sách nhận dạng","Cập nhật danh sách ","Lưu trữ khuôn mặt","Load khuôn mặt","Xóa hết lưu trữ","Thêm ảnh (Thử nghiệm)","Hyperparameters","Developer Mode"};
+                String[] names= {"Danh sách nhận dạng khuôn mặt","Chỉnh sửa danh sách nhận dạng","Lưu trữ nhận dạng hiện tại", "Load nhận dạng đã lưu", "Nhận dạng khuôn mặt bằng ảnh","Xóa hết lưu trữ nhận dạng","Chế độ ADMIN"};
 
                 builder.setItems(names, new DialogInterface.OnClickListener() {
                     @Override
@@ -171,15 +172,12 @@ public class AdminCheckin extends AppCompatActivity {
                                 registered.putAll(readFromSP());
                                 break;
                             case 4:
-                                clearnameList();
-                                break;
-                            case 5:
                                 loadphoto();
                                 break;
-                            case 6:
-                                testHyperparameter();
+                            case 5:
+                                clearnameList();
                                 break;
-                            case 7:
+                            case 6:
                                 developerMode();
                                 break;
                         }
@@ -237,7 +235,7 @@ public class AdminCheckin extends AppCompatActivity {
                     textAbove_preview.setText("Vui lòng giữ khuôn mặt cố định trong vài giây!");
                     textAbove_preview.setTextColor(Color.RED);
                     textAbove_preview.setTypeface(null, Typeface.BOLD);
-                    recognize.setText("Thêm");
+                    recognize.setText("Thêm khuôn mặt");
                     add_face.setVisibility(View.INVISIBLE);
                     reco_name.setVisibility(View.VISIBLE);
                     face_preview.setVisibility(View.INVISIBLE);
@@ -281,10 +279,10 @@ public class AdminCheckin extends AppCompatActivity {
     {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Select Hyperparameter:");
+        builder.setTitle("Chọn Hyperparameter:");
 
         // add a checkbox list
-        String[] names= {"Maximum Nearest Neighbour Distance"};
+        String[] names= {"Khoảng cách tối đa gần nhất"};
 
         builder.setItems(names, new DialogInterface.OnClickListener() {
             @Override
@@ -318,11 +316,11 @@ public class AdminCheckin extends AppCompatActivity {
     {
         if (developerMode) {
             developerMode = false;
-            Toast.makeText(context, "Developer Mode OFF", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "TẮT chế độ ADMIN", Toast.LENGTH_SHORT).show();
         }
         else {
             developerMode = true;
-            Toast.makeText(context, "Developer Mode ON", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "BẬT chế độ ADMIN", Toast.LENGTH_SHORT).show();
         }
     }
     private void addFace()
@@ -366,10 +364,11 @@ public class AdminCheckin extends AppCompatActivity {
             builder.show();
         }
     }
+
     private  void clearnameList()
     {
         AlertDialog.Builder builder =new AlertDialog.Builder(context);
-        builder.setTitle("Bạn có muốn xóa tất cả các nhận dạng?");
+        builder.setTitle("Chắc chắn xóa tất cả các nhận dạng?");
         builder.setPositiveButton("Xoá tất cả", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -382,6 +381,7 @@ public class AdminCheckin extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
     private void updatenameListview()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -390,7 +390,7 @@ public class AdminCheckin extends AppCompatActivity {
             builder.setPositiveButton("OK",null);
         }
         else{
-            builder.setTitle("Vui lòng chọn “nhận dạng khuôn mặt” bạn muốn xóa:");
+            builder.setTitle("Vui lòng chọn “nhận dạng khuôn mặt” mà bạn muốn xóa:");
 
             // add a checkbox list
             String[] names= new String[registered.size()];
@@ -739,19 +739,19 @@ public class AdminCheckin extends AppCompatActivity {
                 if (developerMode)
                 {
                     if(distance_local<distance) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
-                        reco_name.setText("Nearest: "+name +"\nDist: "+ String.format("%.3f",distance_local)+"\n2nd Nearest: "+nearest.get(1).first +"\nDist: "+ String.format("%.3f",nearest.get(1).second));
+                        reco_name.setText("Gần nhất: "+name +"\nKhoảng cách: "+ String.format("%.3f",distance_local)+"\nGần thứ hai: "+nearest.get(1).first +"\nKhoảng cách: "+ String.format("%.3f",nearest.get(1).second));
                     else
-                        reco_name.setText("Unknown "+"\nDist: "+String.format("%.3f",distance_local)+"\nNearest: "+name +"\nDist: "+ String.format("%.3f",distance_local)+"\n2nd Nearest: "+nearest.get(1).first +"\nDist: "+ String.format("%.3f",nearest.get(1).second));
+                        reco_name.setText("Không nhận ra! "+"\nKhoảng cách: "+String.format("%.3f",distance_local)+"\nGần nhất: "+name +"\nKhoảng cách: "+ String.format("%.3f",distance_local)+"\n Gần thứ hai: "+nearest.get(1).first +"\nKhoảng cách: "+ String.format("%.3f",nearest.get(1).second));
 
 //                    System.out.println("nearest: " + name + " - distance: " + distance_local);
                 }
                 else
                 {
                     if(distance_local<distance) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
-                        reco_name.setText(name + "\nCheck-in thành công");
+                        reco_name.setText("Bạn là: " + name + "\nCHECK-IN \n THÀNH CÔNG \n✔️");
 
                     else
-                        reco_name.setText("Không xác định được!");
+                        reco_name.setText("Không xác định được khuôn mặt! \nCHECK-IN \n THẤT BẠI \n❌");
 //                    System.out.println("nearest: " + name + " - distance: " + distance_local);
                 }
 
@@ -1028,7 +1028,7 @@ public class AdminCheckin extends AppCompatActivity {
                         public void onSuccess(List<Face> faces) {
 
                             if(faces.size()!=0) {
-                                recognize.setText("Recognize");
+                                recognize.setText("Nhận dạng");
                                 add_face.setVisibility(View.VISIBLE);
                                 reco_name.setVisibility(View.INVISIBLE);
                                 face_preview.setVisibility(View.VISIBLE);

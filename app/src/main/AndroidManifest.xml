@@ -83,13 +83,13 @@
         <activity
             android:name=".activity.Checkin"
             android:allowBackup="true"
-            android:label="@string/app_name"
+            android:label="Dingest Lodge - Face Recognition 👤"
             android:largeHeap="true"
             android:supportsRtl="true" />
         <activity
             android:name=".activity.AdminCheckin"
             android:allowBackup="true"
-            android:label="@string/app_name"
+            android:label="Dingest Lodge - Face Recognition 👤"
             android:largeHeap="true"
             android:supportsRtl="true" />
         <activity
