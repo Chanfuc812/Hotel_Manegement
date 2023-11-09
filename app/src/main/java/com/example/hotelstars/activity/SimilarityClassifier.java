@@ -66,5 +66,8 @@ public interface SimilarityClassifier {
       return resultString.trim();
     }
 
+    public String getTitle() {
+      return title;
+    }
   }
 }

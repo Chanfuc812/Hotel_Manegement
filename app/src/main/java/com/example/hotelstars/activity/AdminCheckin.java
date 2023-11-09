@@ -24,16 +24,21 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.ParcelFileDescriptor;
-import android.text.Html;
 import android.text.InputType;
 import android.util.Pair;
 import android.util.Size;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -323,47 +328,85 @@ public class AdminCheckin extends AppCompatActivity {
             Toast.makeText(context, "BẬT chế độ ADMIN", Toast.LENGTH_SHORT).show();
         }
     }
-    private void addFace()
-    {
-        {
 
-            start=false;
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("Vui lòng nhập tên:");
+    private void addFace() {
+        start = false;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Vui lòng nhập thông tin:");
 
-            // Set up the input
-            final EditText input = new EditText(context);
+        // Set up the input fields
+        final EditText nameInput = new EditText(context);
+        nameInput.setHint("Họ tên:");
+        final EditText roomInput = new EditText(context);
+        roomInput.setHint("Số phòng:");
+        final EditText phoneInput = new EditText(context);
+        phoneInput.setHint("Số điện thoại:");
+        final EditText emailInput = new EditText(context);
+        emailInput.setHint("E-mail liên hệ:");
 
-            input.setInputType(InputType.TYPE_CLASS_TEXT );
-            builder.setView(input);
+        emailInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+        phoneInput.setInputType(InputType.TYPE_CLASS_PHONE);
+        roomInput.setInputType(InputType.TYPE_CLASS_PHONE);
 
-            // Set up the buttons
-            builder.setPositiveButton("THÊM", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    //Toast.makeText(context, input.getText().toString(), Toast.LENGTH_SHORT).show();
+        // Text view for room type label
+        TextView roomTypeLabel = new TextView(context);
+        roomTypeLabel.setText("Loại phòng:");
+        roomTypeLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
-                    //Create and Initialize new object with Face embeddings and Name.
-                    SimilarityClassifier.Recognition result = new SimilarityClassifier.Recognition(
-                            "0", "", -1f);
-                    result.setExtra(embeedings);
 
-                    registered.put( input.getText().toString(),result);
-                    start=true;
+        // Spinner for room type selection
+        final Spinner roomTypeSpinner = new Spinner(context);
+        ArrayAdapter<CharSequence> roomTypeAdapter = ArrayAdapter.createFromResource(context, R.array.room_types, android.R.layout.simple_spinner_item);
+        roomTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        roomTypeSpinner.setAdapter(roomTypeAdapter);
+        roomTypeSpinner.setPrompt("Chọn loại phòng:");
 
-                }
-            });
-            builder.setNegativeButton("HỦY", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    start=true;
-                    dialog.cancel();
-                }
-            });
+        // Create a layout to hold input fields, text view, and spinner
 
-            builder.show();
-        }
+        LinearLayout layout = new LinearLayout(context);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.addView(nameInput);
+        layout.addView(roomTypeLabel);
+        layout.addView(roomTypeSpinner);
+        layout.addView(roomInput);
+        layout.addView(phoneInput);
+        layout.addView(emailInput);
+        builder.setView(layout);
+        // Set up the buttons
+        builder.setPositiveButton("THÊM", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = nameInput.getText().toString();
+                String room = roomInput.getText().toString();
+                String roomType = roomTypeSpinner.getSelectedItem().toString(); // Get selected room type from spinner
+                String phone = phoneInput.getText().toString();
+                String email = emailInput.getText().toString();
+
+                // Package the information into a single string "name"
+                String fullName = "Tên: " + name + "\nLoại phòng: " + roomType + "\nSố phòng: " + room + "\nSố điện thoại: " + phone + "\nE-mail: " + email;
+
+                // Create and Initialize new object with Face embeddings and information
+                SimilarityClassifier.Recognition result = new SimilarityClassifier.Recognition("0", fullName, -1f);
+                result.setExtra(embeedings);
+
+                // Add the "name" object to the registered map with name as the key
+                registered.put(name, result);
+                start = true;
+            }
+        });
+
+        builder.setNegativeButton("HỦY", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                start = true;
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
+
+
 
     private  void clearnameList()
     {
@@ -483,42 +526,61 @@ public class AdminCheckin extends AppCompatActivity {
     }
 
 
-    private void displaynameListview()
-    {
+    private void displaynameListview() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        // System.out.println("Registered"+registered);
-        if(registered.isEmpty())
+        if(registered.isEmpty()) {
             builder.setTitle("Không có khuôn mặt nào được thêm vào!");
-        else
+        } else {
             builder.setTitle("Danh sách nhận dạng khuôn mặt:");
 
-        // add a checkbox list
-        String[] names= new String[registered.size()];
-        boolean[] checkedItems = new boolean[registered.size()];
-        int i=0;
-        for (Map.Entry<String, SimilarityClassifier.Recognition> entry : registered.entrySet())
-        {
-            //System.out.println("NAME"+entry.getKey());
-            names[i]=entry.getKey();
-            checkedItems[i]=false;
-            i=i+1;
+            String[] names = new String[registered.size()];
+            final SimilarityClassifier.Recognition[] recognitions = new SimilarityClassifier.Recognition[registered.size()];
+            int i = 0;
 
+            for (Map.Entry<String, SimilarityClassifier.Recognition> entry : registered.entrySet()) {
+                names[i] = entry.getKey();
+                recognitions[i] = entry.getValue();
+                i++;
+            }
+
+            builder.setItems(names, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    SimilarityClassifier.Recognition selectedRecognition = recognitions[which];
+                    if (selectedRecognition != null) {
+                        String details = selectedRecognition.getTitle() + "\n";
+                        // Lấy thông tin phòng, số điện thoại và email từ đối tượng selectedRecognition (nếu đã được định nghĩa)
+                        // ví dụ: String room = selectedRecognition.getExtra().get("room").toString();
+                        // String phone = selectedRecognition.getExtra().get("phone").toString();
+                        // String email = selectedRecognition.getExtra().get("email").toString();
+                        // Thêm thông tin phòng, số điện thoại và email vào chuỗi details
+
+                        AlertDialog.Builder detailBuilder = new AlertDialog.Builder(context);
+                        detailBuilder.setTitle("Thông tin chi tiết khách hàng:");
+                        detailBuilder.setMessage(details);
+                        detailBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        detailBuilder.show();
+                    }
+                }
+            });
         }
-        builder.setItems(names,null);
-
-
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                dialog.dismiss();
             }
         });
 
-        // create and show the alert dialog
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 
 
 
@@ -746,14 +808,17 @@ public class AdminCheckin extends AppCompatActivity {
 //                    System.out.println("nearest: " + name + " - distance: " + distance_local);
                 }
                 else
-                {
-                    if(distance_local<distance) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
-                        reco_name.setText("Bạn là: " + name + "\nCHECK-IN \n THÀNH CÔNG \n✔️");
 
-                    else
-                        reco_name.setText("Không xác định được khuôn mặt! \nCHECK-IN \n THẤT BẠI \n❌");
-//                    System.out.println("nearest: " + name + " - distance: " + distance_local);
+                {
+                    if(distance_local < distance) {
+                        String fullName = registered.get(name).getTitle(); // Lấy thông tin đối tượng SimilarityClassifier.Recognition theo tên
+                        reco_name.setText(fullName + "\n \nTrạng thái: \nCHECK-IN THÀNH CÔNG ✔️");
+                    } else {
+                        reco_name.setText("Không xác định được khuôn mặt! \n \nTrạng thái: \nCHECK-IN THẤT BẠI ❌");
+                    }
+                    reco_name.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
                 }
+
 
 
 
