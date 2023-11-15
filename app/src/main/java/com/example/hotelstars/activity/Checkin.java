@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Pair;
 import android.util.Size;
 import android.util.TypedValue;
@@ -34,6 +35,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -320,6 +322,7 @@ public class Checkin extends AppCompatActivity {
             Toast.makeText(context, "Developer Mode ON", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void addFace() {
         start = false;
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -344,6 +347,10 @@ public class Checkin extends AppCompatActivity {
         roomTypeLabel.setText("Loại phòng:");
         roomTypeLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
+        TextView serviceTypeLabel = new TextView(context);
+        serviceTypeLabel.setText("Dịch vụ sử dụng:");
+        serviceTypeLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+
 
         // Spinner for room type selection
         final Spinner roomTypeSpinner = new Spinner(context);
@@ -352,7 +359,28 @@ public class Checkin extends AppCompatActivity {
         roomTypeSpinner.setAdapter(roomTypeAdapter);
         roomTypeSpinner.setPrompt("Chọn loại phòng:");
 
-        // Create a layout to hold input fields, text view, and spinner
+// Create a layout to hold CheckBoxes
+        LinearLayout checkBoxLayout = new LinearLayout(context);
+        checkBoxLayout.setOrientation(LinearLayout.VERTICAL);
+
+// Create CheckBoxes
+        CheckBox checkBoxA = new CheckBox(context);
+        checkBoxA.setText("Playground");
+        CheckBox checkBoxB = new CheckBox(context);
+        checkBoxB.setText("Hồ bơi");
+        CheckBox checkBoxC = new CheckBox(context);
+        checkBoxC.setText("Gym");
+        CheckBox checkBoxD = new CheckBox(context);
+        checkBoxD.setText("Karaoke");
+
+// Add CheckBoxes to the layout
+        checkBoxLayout.addView(checkBoxA);
+        checkBoxLayout.addView(checkBoxB);
+        checkBoxLayout.addView(checkBoxC);
+        checkBoxLayout.addView(checkBoxD);
+
+
+
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(nameInput);
@@ -361,8 +389,9 @@ public class Checkin extends AppCompatActivity {
         layout.addView(roomInput);
         layout.addView(phoneInput);
         layout.addView(emailInput);
+        layout.addView(serviceTypeLabel);
+        layout.addView(checkBoxLayout);
         builder.setView(layout);
-
         // Set up the buttons
         builder.setPositiveButton("THÊM", new DialogInterface.OnClickListener() {
             @Override
@@ -372,9 +401,24 @@ public class Checkin extends AppCompatActivity {
                 String roomType = roomTypeSpinner.getSelectedItem().toString(); // Get selected room type from spinner
                 String phone = phoneInput.getText().toString();
                 String email = emailInput.getText().toString();
+                // Lấy ra danh sách các dịch vụ được chọn
+                List<String> selectedServices = new ArrayList<>();
+                if (checkBoxA.isChecked()) {
+                    selectedServices.add("Playground");
+                }
+                if (checkBoxB.isChecked()) {
+                    selectedServices.add("Hồ bơi");
+                }
+                if (checkBoxC.isChecked()) {
+                    selectedServices.add("Gym");
+                }
+                if (checkBoxD.isChecked()) {
+                    selectedServices.add("Karaoke");
+                }
 
-                // Package the information into a single string "name"
-                String fullName = "Tên: " + name + "\nLoại phòng: " + roomType + "\nSố phòng: " + room + "\nSố điện thoại: " + phone + "\nE-mail: " + email;
+                String service = TextUtils.join(", ", selectedServices);
+                String fullName = "Tên: " + name + "\nLoại phòng: " + roomType + "\nSố phòng: " + room + "\nSố điện thoại: " + phone + "\nE-mail: " + email + "\nDịch vụ sử dụng: " + service.trim();
+
 
                 // Create and Initialize new object with Face embeddings and information
                 SimilarityClassifier.Recognition result = new SimilarityClassifier.Recognition("0", fullName, -1f);
@@ -396,6 +440,8 @@ public class Checkin extends AppCompatActivity {
 
         builder.show();
     }
+
+
     private  void clearnameList()
     {
         AlertDialog.Builder builder =new AlertDialog.Builder(context);
@@ -778,14 +824,16 @@ public class Checkin extends AppCompatActivity {
                 else
 
                 {
-                    if(distance_local < distance) {
-                        String fullName = registered.get(name).getTitle(); // Lấy thông tin đối tượng SimilarityClassifier.Recognition theo tên
+                    if (distance_local < distance) {
+                        String fullName = registered.get(name).getTitle();
+                        reco_name.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
                         reco_name.setText(fullName + "\n \nTrạng thái: \nCHECK-IN THÀNH CÔNG ✔️");
                     } else {
+                        reco_name.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                         reco_name.setText("Không xác định được khuôn mặt! \n \nTrạng thái: \nCHECK-IN THẤT BẠI ❌");
                     }
-                    reco_name.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
                 }
+
 
 
 

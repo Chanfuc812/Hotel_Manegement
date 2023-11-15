@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             boolean emailVerified = user.isEmailVerified();
             Intent intent;
             if(email.equals("admin@gmail.com")){
-                Toast.makeText(MainActivity.this, "WELCOME BACK, MANAGER ✋", Toast.LENGTH_LONG).show();
                 intent = new Intent(MainActivity.this, AdminPanel.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);

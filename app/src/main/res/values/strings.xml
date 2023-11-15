@@ -82,4 +82,15 @@
         <item> Phòng đôi business </item>
         <item> Phòng triple resort </item>
     </string-array>
+
+    <string-array name="service_types">
+        <item> Khu vui chơi </item>
+        <item> Phòng đôi hiện đại </item>
+        <item> Phòng đôi lãng mạn </item>
+        <item> Phòng đôi đặc biệt </item>
+        <item> Phòng đôi double </item>
+        <item> Phòng đôi twin </item>
+        <item> Phòng đôi business </item>
+        <item> Phòng triple resort </item>
+    </string-array>
 </resources>
